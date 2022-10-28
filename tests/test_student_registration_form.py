@@ -26,7 +26,6 @@ def test_filling_registration_form():
     registration_form.set_current_address(student.current_address)
     registration_form.scroll_to_state()
     registration_form.set_state(student.state)
-    registration_form.scroll_to_city()
     registration_form.set_city(student.city)
     registration_form.submit_form()
 
