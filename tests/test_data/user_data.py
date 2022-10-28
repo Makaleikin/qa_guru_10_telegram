@@ -36,7 +36,7 @@ class User:
     current_address: str = 'The Earth'
     picture_file: str = './tests/test_data/qapicture.png'
     state: str = 'NCR'
-    city: str = 'Delhi'
+    city: str = 'Gurgaon'
 
 
 student = User(first_name='Artem', gender=Gender.Male)
