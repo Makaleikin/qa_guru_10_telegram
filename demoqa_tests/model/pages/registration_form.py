@@ -16,9 +16,11 @@ def given_opened():
 
 
 def remove_advertisement():
-    browser.all('[id^=google_ads][id$=container__],[id$=Advertisement]').with_(timeout=10)\
-        .should(have.size_less_than_or_equal(4))\
+    browser.all('[id^=google_ads][id$=container__],[id$=Advertisement]').with_(timeout=10) \
+        .should(have.size_less_than_or_equal(4)) \
         .perform(command.js.remove)
+
+
 #     ads = browser.all('[id^=google_ads][id$=container__]')
 #     if ads.wait.until(have.size_less_than_or_equal(5)):
 #         ads.perform(command.js.remove)
@@ -78,17 +80,16 @@ def upload_picture(picture_file: str):
 def set_current_address(current_address: str):
     browser.element('#currentAddress').type(current_address)
 
+
 @allure.step('Скроллим до выбора страны')
 def scroll_to_state():
     browser.element('#state').perform(command.js.scroll_into_view)
+
 
 @allure.step('Выбираем страну')
 def set_state(value: str):
     dropdown.select(browser.element('#state'), value)
 
-@allure.step('Скроллим до выбора города')
-def scroll_to_state():
-    browser.element('#city').perform(command.js.scroll_into_view)
 
 @allure.step('Выбираем город')
 def set_city(value: str):
