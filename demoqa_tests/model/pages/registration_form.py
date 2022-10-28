@@ -86,6 +86,9 @@ def scroll_to_state():
 def set_state(value: str):
     dropdown.select(browser.element('#state'), value)
 
+@allure.step('Скроллим до выбора города')
+def scroll_to_state():
+    browser.element('#city').perform(command.js.scroll_into_view)
 
 @allure.step('Выбираем город')
 def set_city(value: str):
