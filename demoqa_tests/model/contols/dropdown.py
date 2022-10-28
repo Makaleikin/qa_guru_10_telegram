@@ -5,5 +5,5 @@ from selene.support.shared import browser
 def select(element, option):
     element.click()
     browser.all('[id^=react-select][id*=-option-]').by(
-        have.text(option)
+        have.exact_text(option)
     ).first.click()
